@@ -190,8 +190,19 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-
 ```
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+```bash
+mkdir ~/mapproxy
+```
+```bash
+sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
+```
+
+2) mapviz 에서 지도 설정하기
+ 이전에 켜놓았던 mapviz 윈도우에서 'source:' 클릭 -> custom WMTS source... 클릭 -> 'base URL:' 에 http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png 로 변경 -> 'max Zoom:' 에서 'save' 클릭 -> 'Title source Name'은 알아서 설정(필자는 GIST라 함) 
 
 
 
