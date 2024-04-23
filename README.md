@@ -85,7 +85,7 @@ catkin_make
 
 4) AttributeError: module 'em' has no attribute 'RAW_OPT' , Invoking "make -j8 -l8" failed  오류발생
    
-이 단계는 AttributeError: module 'em' has no attribute 'RAW_OPT',  Invoking "make -j8 -l8" failed 오류가 발생안하면 5. 단계로 jump
+이 단계는 AttributeError: module 'em' has no attribute 'RAW_OPT',  Invoking "make -j8 -l8" failed 오류가 발생안하면  5. 으로 jump
 만약 발생한다면 em module 설치
 
 ```bash
@@ -98,6 +98,12 @@ pip install empy==3.3.4
 ```
 
 이후 test_ws내에서(src경로 밖) catkin_make 다시 진행하면 성공적으로 완료!
+
+5) 변경 사항 적용
+test_ws 경로에서(src 폴더 경내 밖)
+```bash
+source devel/setup.bash
+```
 
 ## 3단계 launch 파일 수정
 
@@ -124,7 +130,27 @@ pip install empy==3.3.4
 
  3) 수정한 launch file을 Save 한다.
 
-    
+## 4단계 launch 실행
+
+```bash
+roslaunch mapviz mapviz.launch
+```
+
+## 5단계 GPS 핑 찍어 보기
+
+1) 위도, 경도를 topic이 담긴 rosbag 파일 혹은 실시간으로 위도 경도 topic을 출력하는 환경을 구성하여 rostopic list에서 GPS 토픽이 출력되게 한다.
+ (필자의 경우 rosbag play를 통해 gps/fix 토픽을 실시간으로 받아오는 중임)
+
+2) 'navsat' Add 하기
+
+>왼쪽 하단 "Add" 버튼 클릭후 navsat 클릭
+![gps](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/40b9ebb3-2a1a-4db4-beef-08bc4415e0ec)
+
+
+3) 'tile_map' Add 하기 
+>왼쪽 하단 "Add" 버튼 클릭후 tile_map 클릭
+>![map](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/1c98f83c-294d-4b49-8137-5cd166a843d4)
+
 
 
 
