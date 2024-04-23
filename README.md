@@ -100,6 +100,7 @@ pip install empy==3.3.4
 이후 test_ws내에서(src경로 밖) catkin_make 다시 진행하면 성공적으로 완료!
 
 5) 변경 사항 적용
+6) 
 test_ws 경로에서(src 폴더 경내 밖)
 ```bash
 source devel/setup.bash
