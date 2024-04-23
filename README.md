@@ -107,10 +107,11 @@ pip install empy==3.3.4
 
 2) launch 파일 수정
 
-    <수정 전>
+
+> <수정 전>
 ![수정전](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/775ce8ad-2375-4fd3-866d-a97889d8b6b7)
 
-    <수정 후>
+> <수정 후>
 
 ![Screenshot from 2024-04-24 00-40-16](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/d791c786-538e-43f7-927f-48d4d7af9ec6)
 
