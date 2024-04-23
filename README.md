@@ -202,7 +202,31 @@ sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 ```
 
 2) mapviz 에서 지도 설정하기
- 이전에 켜놓았던 mapviz 윈도우에서 'source:' 클릭 -> custom WMTS source... 클릭 -> 'base URL:' 에 http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png 로 변경 -> 'max Zoom:' 에서 'save' 클릭 -> 'Title source Name'은 알아서 설정(필자는 GIST라 함) 
+ 이전에 켜놓았던 mapviz 윈도우에서 'source:' 클릭 -> custom WMTS source... 클릭 -> 'base URL:' 에 http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png 로 변경 -> 'max Zoom:' 에서 'save' 클릭 -> 'Title source Name'은 알아서 설정(필자는 GIST라 함)
+처음 켜면 시간이 걸림
+![Screenshot from 2024-04-24 01-59-02](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/f33764f6-1107-4ae4-94f1-42930e616bc8)
+
+## 추후에 실행할시
+
+1)
+
+```bash
+roslaunch mapviz mapviz.launch
+```
+
+2)
+
+>If case 1) sudo rm ~/.mapviz_config 진행 했을 경우
+
+```bash
+sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
+```
+진행후
+
+지도, GPS설정 다시한다.
+
+3) rosbag play를 실행
+> mapviz를 실행하고 rosbag play를 해야 GPS 토픽이 뜨는경우 존재
 
 
 
