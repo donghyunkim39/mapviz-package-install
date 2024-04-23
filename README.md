@@ -154,7 +154,7 @@ roslaunch mapviz mapviz.launch
 4) GPS 토픽 설정하기
 > navsat 윈도우에서 'Topic:' 칸에 'select' 클릭 -> 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 -> OK버튼 클릭(필자의 경우 /gps/fix)
  -> 'usb Latest Transforms:' 칸을 check해준다.
-만약 'usb Latest Transforms:' 칸이 보이지 않는다면 아래 코드 실행 후 mapviz종료 -> 아래코드 실행 -> roslaunch 재실행 등 여러방법을 동원하면 갑자기 뜨는 경우 있음 (이유는 모르겠음)
+만약 'usb Latest Transforms:' 칸이 보이지 않는다면  mapviz종료 -> 아래코드 실행 -> roslaunch 재실행 등 여러방법을 동원하면 갑자기 뜨는 경우 있음 (이유는 모르겠음)
 
 ```bash
 sudo rm ~/.mapviz_config
