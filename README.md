@@ -15,6 +15,7 @@ rostopic info /GPS 토픽이름 ex) rostopic info /gps/fix
 ## 0단계(option): Package 다운받을 WS 폴더 만들기 
 
 1) WS(폴더) 생성 #폴더 이름은 자유 but, 여기서 test_ws라고 함.
+   
 ubuntu 터미널창에 다음을 입력
 
 ```bash
@@ -28,7 +29,9 @@ cd ~/test_ws/
 ```bash
 catkin_make
 ```
-3) 변경 설정 적용 (bash가 아닌 zsh 사용중이면 source devel/setup.zshrc)
+3) 변경 설정 적용
+  
+(bash가 아닌 zsh 사용중이면 source devel/setup.zshrc)
 ```bash
 source devel/setup.bash
 ```
@@ -61,8 +64,9 @@ sudo apt-get install ros-$ROS_DISTRO-multires-image
 
 ## 2단계 mapviz package install
 
-1) 원하는 폴더의 src경로 내 접속 (여기선 test_ws/src에 접속함)
+1) 원하는 폴더의 src경로 내 접속
    
+(여기선 test_ws/src에 접속함)
 ```bash
 cd test_ws/src
 ```
@@ -100,7 +104,7 @@ pip install empy==3.3.4
 이후 test_ws내에서(src경로 밖) catkin_make 다시 진행하면 성공적으로 완료!
 
 5) 변경 사항 적용
-6) 
+   
 test_ws 경로에서(src 폴더 경내 밖)
 ```bash
 source devel/setup.bash
@@ -140,19 +144,22 @@ roslaunch mapviz mapviz.launch
 ## 5단계 GPS 핑 찍어 보기
 
 1) 위도, 경도를 topic이 담긴 rosbag 파일 혹은 실시간으로 위도 경도 topic을 출력하는 환경을 구성하여 rostopic list에서 GPS 토픽이 출력되게 한다.
+   
  (필자의 경우 rosbag play를 통해 gps/fix 토픽을 실시간으로 받아오는 중임)
 
-2) 'navsat' Add 하기
+3) 'navsat' Add 하기
 
 >왼쪽 하단 "Add" 버튼 클릭후 navsat 클릭
 ![gps](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/40b9ebb3-2a1a-4db4-beef-08bc4415e0ec)
 
 
-3) 'tile_map' Add 하기 
+3) 'tile_map' Add 하기
+   
 >왼쪽 하단 "Add" 버튼 클릭후 tile_map 클릭
 ![map](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/1c98f83c-294d-4b49-8137-5cd166a843d4)
 
 4) GPS 토픽 설정하기
+   
 > navsat 윈도우에서 'Topic:' 칸에 'select' 클릭 -> 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 -> OK버튼 클릭(필자의 경우 /gps/fix)
  -> 'usb Latest Transforms:' 칸을 check해준다.
 만약 'usb Latest Transforms:' 칸이 보이지 않는다면  mapviz종료 -> 아래코드 실행 -> roslaunch 재실행 등 여러방법을 동원하면 갑자기 뜨는 경우 있음 (이유는 모르겠음)
