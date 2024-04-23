@@ -105,7 +105,7 @@ pip install empy==3.3.4
 
 5) 변경 사항 적용
    
-test_ws 경로에서(src 폴더 경내 밖)
+test_ws 경로에서(cd test_ws경로)
 ```bash
 source devel/setup.bash
 ```
