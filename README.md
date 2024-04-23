@@ -216,7 +216,7 @@ roslaunch mapviz mapviz.launch
 
 2)
 
->If case 1) sudo rm ~/.mapviz_config 진행 했을 경우
+>If, sudo rm ~/.mapviz_config 진행 했을 경우
 
 ```bash
 sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
