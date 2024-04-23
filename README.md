@@ -149,8 +149,49 @@ roslaunch mapviz mapviz.launch
 
 3) 'tile_map' Add 하기 
 >왼쪽 하단 "Add" 버튼 클릭후 tile_map 클릭
->![map](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/1c98f83c-294d-4b49-8137-5cd166a843d4)
+![map](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/1c98f83c-294d-4b49-8137-5cd166a843d4)
 
+4) GPS 토픽 설정하기
+> navsat 윈도우에서 'Topic:' 칸에 'select' 클릭 -> 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 -> OK버튼 클릭(필자의 경우 /gps/fix)
+ -> 'usb Latest Transforms:' 칸을 check해준다.
+만약 'usb Latest Transforms:' 칸이 보이지 않는다면 아래 코드 실행 후 mapviz종료 -> 아래코드 실행 -> roslaunch 재실행 등 여러방법을 동원하면 갑자기 뜨는 경우 있음 (이유는 모르겠음)
+
+```bash
+sudo rm ~/.mapviz_config
+```
+![설정완료](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/9a7576fa-149e-4ceb-a6b7-5f935c799794)
+
+하지만, 우리가 원하는건 GPS포인트를 "실제 지도위에 찍어보는것!!"
+
+## 6단계 실제 지도 불러오기
+
+1) docker install
+
+새 터미널 창에 아래 코드 입력 (오류 발생시 https://docs.docker.com/engine/install/ubuntu/ 참고)
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install ca-certificates curl
+```
+```bash
+sudo install -m 0755 -d /etc/apt/keyrings
+```
+```bash
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+```
+```bash
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
+
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+```
 
 
 
