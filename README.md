@@ -116,8 +116,11 @@ pip install empy==3.3.4
 ![Screenshot from 2024-04-24 00-40-16](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/d791c786-538e-43f7-927f-48d4d7af9ec6)
 
 필독) 수정 내용:
- 수정1) <param name="local_xy_origin" value="swri"/> 에서 <param name="local_xy_origin" value="auto"/>  : 실시간으로 GPS값을 읽어오기 위함
- 수정2) <remap from="fix" to="/gps/fix"/> 추가 하기 : 필자의 경우 위도, 경도 정보가 /gps/fix 토픽에 담겨있으므로 /gps/fix라고 설정함. 개인환경에 맞춰 수정 필요. (본인 토픽이름에 맞게 수정 필요) 
+ > 수정1) <param name="local_xy_origin" value="swri"/> 에서 <param name="local_xy_origin" value="auto"/> 
+ : 실시간으로 GPS값을 읽어오기 위함
+ 
+ > 수정2) <remap from="fix" to="/gps/fix"/> 추가 하기 
+ : 필자의 경우 위도, 경도 정보가 /gps/fix 토픽에 담겨있으므로 /gps/fix라고 설정함. 개인환경에 맞춰 수정 필요. (본인 토픽이름에 맞게 수정 필요) 
 
  3) 수정한 launch file을 Save 한다.
 
