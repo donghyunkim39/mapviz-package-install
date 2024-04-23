@@ -226,7 +226,7 @@ sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 지도, GPS설정 다시한다.
 
 3) rosbag play를 실행
-> mapviz를 실행하고 rosbag play를 해야 GPS 토픽이 뜨는경우 존재
+> mapviz를 실행하고 rosbag play를 해야 GPS 토픽이 뜬다.
 
 
 > 완료후 모습
