@@ -28,7 +28,7 @@ cd ~/test_ws/
 ```bash
 catkin_make
 ```
-3) 변경 설정 적용 (bash가 아닌 zsh 사용중이면 source devel/setup.zshrc
+3) 변경 설정 적용 (bash가 아닌 zsh 사용중이면 source devel/setup.zshrc)
 ```bash
 source devel/setup.bash
 ```
