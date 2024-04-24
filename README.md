@@ -259,27 +259,27 @@ sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 
 >가능성5) mapviz launch 실행시 처음 default로 켜지는 위치가 현재 혹은 rosbag했을 당시 위치인지?
 
-## 추후에 실행할시
+## Mapviz 편의 설정 (option)
 
-1)
+>1) mapviz를 launch했을때 처음 default로 보여지는 위치를 수정하고 싶습니다.
+
+3단계 launch 파일을 조금 수정하자. mapviz.launch 파일을 연다.
+![Screenshot from 2024-04-24 17-02-07](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/4ae77e11-4b7e-4686-9066-06f83daee635)
+
+> 위사진과 같이 수정해줍니다.
+
+수정1) value ="auto"에서 auto대신 임의의 이름으로 바꾸기(필자는 gist라함) 단, 하단의 name과는 일치 시켜주기
+
+수정2) latitude, longitude값을 map이 default로 켜지는 위치로 설정해주기
+
+>2) mapviz 오류가 지속적으로 발생해 설정을 초기화 해주고 싶습니다.
 
 ```bash
-roslaunch mapviz mapviz.launch
+sudo rm ~/.mapviz_config
 ```
 
-2)
+위코드를 명령창에 적용하여 세팅을 전부 초기화, 5, 6단계 재진행
 
->If, sudo rm ~/.mapviz_config 진행 했을 경우
-
-```bash
-sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
-```
-진행후
-
-지도, GPS설정 다시한다.
-
-3) rosbag play를 실행
-> mapviz를 실행하고 rosbag play를 해야 GPS 토픽이 뜬다.
 
 
 > 완료후 모습
