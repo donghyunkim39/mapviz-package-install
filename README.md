@@ -89,7 +89,7 @@ catkin_make
 
 4) AttributeError: module 'em' has no attribute 'RAW_OPT' , Invoking "make -j8 -l8" failed  오류발생
    
-이 단계는 AttributeError: module 'em' has no attribute 'RAW_OPT',  Invoking "make -j8 -l8" failed 오류가 발생안하면  5. 으로 jump
+위 오류가 발생안하면  5. 으로 jump 한다.
 만약 발생한다면 em module 설치
 
 ```bash
