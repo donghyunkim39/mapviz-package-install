@@ -240,8 +240,18 @@ http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
 > 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 (필자의 경우 /gps/fix 임) <p>$\bf{ topic list가 비어있으면 rosbag 재실행 }$</p>
 
 
-![설정완료](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/9a7576fa-149e-4ceb-a6b7-5f935c799794)
 
+![Screenshot from 2024-04-24 16-10-04](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/ec1d0c60-301f-4735-b8b8-b5f5d9aae690)
+설정이 완료되면 위와같이 GPS핑이 실제 Map위에 놓여있는것을 확인할수있음.
+
+> If, 실행이 안된다면
+> 가능성1) ' MAP 추가 -> GPS핑 추가' 순서가 아닌 'GPS핑 추가 -> MAP 추가' 했는지?
+> 가능성2) mapviz 껏다 다시 launch하기 (설정 저장되어있음)
+> 가능성3) rosbag play를 stop하고 재실행
+> 가능성4) docker가 잘 설치되었는지? 잘되었다면 터미널에서 docker run (아래 코드) 실행은 했었는지?
+```bash
+sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
+```
 
 ## 추후에 실행할시
 
