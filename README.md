@@ -145,7 +145,7 @@ roslaunch mapviz mapviz.launch
 
 ## 5단계 실제 지도 불러오기
 
-> 이제부터는 순서가 중요합니다. <p>$\bf{  ' 맵 불러오기 -> GPS 핑찍기 ' }$</p> 순서 지키기
+> 이제부터는 순서가 중요합니다. <p>$\bf{  ' 맵 불러오기 -> GPS 핑찍기 ' }$</p>
 > 반대로하면 GPS핑이 지도에 가려져 안보입니다.
 
 
@@ -186,19 +186,31 @@ sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 ```
 
 2) mapviz 에서 지도 설정하기
->![Screenshot from 2024-04-24 16-07-59](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/157cca8a-e1e2-4c7b-843d-7f3e1875b1d9)
->###2-1)mapviz 윈도우에서 'Add'클릭
->하단 'source:' 클릭
+![Screenshot from 2024-04-24 16-07-59](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/157cca8a-e1e2-4c7b-843d-7f3e1875b1d9)
+
+>mapviz 윈도우에서 'Add'클릭
+>'tile_map' 클릭
+>'OK' 클릭
+
+![Screenshot from 2024-04-24 16-08-34](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/8583696d-e486-4a79-afa4-b22adfa6bb9b)
+
+>'source:' 클릭
+
 >custom WMTS source... 클릭
+
 >'base URL:' 에 하단 링크 복사 붙여넣기
+
 ```bash
 http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
 ```
->max Zoom:' 에서 'save' 클릭 (max Zoom값 19추천)
->'Title source >Name'은 원하는 이름 입력(필자는 google 이라함) 아래이미지는 map setting을 끝 마친후 모습입니다.
-![Screenshot from 2024-04-24 16-08-34](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/faf0b751-a90e-4aad-b377-2567314d1b48)
 
-<font color="red">mapviz윈도우를 종료하고 launch파일을 다시 시작해야 google 맵이 로드됩니다.</font>
+>max Zoom:' 19로 설정후(추천값임)'save' 클릭
+
+>'Title source >Name'은 원하는 이름 입력(필자는 google 이라함)
+
+<p>$\bf{ mapviz윈도우를 종료하고 launch파일을 다시 시작해야 google 맵이 로드됩니다. }$</p>
+
+
 
 
 ## 6단계 GPS 핑 찍어 보기
