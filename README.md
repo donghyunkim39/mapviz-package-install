@@ -143,37 +143,11 @@ source devel/setup.bash
 roslaunch mapviz mapviz.launch
 ```
 
-## 5단계 GPS 핑 찍어 보기
+## 5단계 실제 지도 불러오기
 
-1) 위도, 경도를 topic이 담긴 rosbag 파일 혹은 실시간으로 위도 경도 topic을 출력하는 환경을 구성하여 rostopic list에서 GPS 토픽이 출력되게 한다.
-   
- (필자의 경우 rosbag play를 통해 gps/fix 토픽을 실시간으로 받아오는 중임)
+<font color="red">이제부터는 순서가 중요합니다. '맵 불러오기 -> GPS 핑찍기' 순서 지키기 </font>
+> 반대로하면 GPS핑이 지도에 가려져 안보입니다.
 
-3) 'navsat' Add 하기
-
->왼쪽 하단 "Add" 버튼 클릭후 navsat 클릭
-![gps](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/40b9ebb3-2a1a-4db4-beef-08bc4415e0ec)
-
-
-3) 'tile_map' Add 하기
-   
->왼쪽 하단 "Add" 버튼 클릭후 tile_map 클릭
-![map](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/1c98f83c-294d-4b49-8137-5cd166a843d4)
-
-4) GPS 토픽 설정하기
-   
-> navsat 윈도우에서 'Topic:' 칸에 'select' 클릭 -> 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 -> OK버튼 클릭(필자의 경우 /gps/fix)
- -> 'usb Latest Transforms:' 칸을 check해준다.
-만약 'usb Latest Transforms:' 칸이 보이지 않는다면  mapviz종료 -> 아래코드 실행 -> roslaunch 재실행 등 여러방법을 동원하면 갑자기 뜨는 경우 있음 (이유는 모르겠음)
-
-```bash
-sudo rm ~/.mapviz_config
-```
-![설정완료](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/9a7576fa-149e-4ceb-a6b7-5f935c799794)
-
-하지만, 우리가 원하는건 GPS포인트를 "실제 지도위에 찍어보는것!!"
-
-## 6단계 실제 지도 불러오기
 
 1) docker install
 
@@ -212,10 +186,49 @@ sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 ```
 
 2) mapviz 에서 지도 설정하기
+>![Screenshot from 2024-04-24 16-07-59](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/157cca8a-e1e2-4c7b-843d-7f3e1875b1d9)
+>###2-1)mapviz 윈도우에서 'Add'클릭
+>하단 'source:' 클릭
+>custom WMTS source... 클릭
+>'base URL:' 에 하단 링크 복사 붙여넣기
+```bash
+http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
+```
+>max Zoom:' 에서 'save' 클릭 (max Zoom값 19추천)
+>'Title source >Name'은 원하는 이름 입력(필자는 google 이라함) 아래이미지는 map setting을 끝 마친후 모습입니다.
+![Screenshot from 2024-04-24 16-08-34](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/faf0b751-a90e-4aad-b377-2567314d1b48)
 
->이전에 켜놓았던 mapviz 윈도우에서 'source:' 클릭 -> custom WMTS source... 클릭 -> 'base URL:'에http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png 로 변경 -> 'max Zoom:' 에서 'save' 클릭(max Zoom값 19추천) -> 'Title source >Name'은 원하는 이름 입력
-*처음 켜면 시간이 걸림
-![Screenshot from 2024-04-24 01-59-02](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/f33764f6-1107-4ae4-94f1-42930e616bc8)
+<font color="red">mapviz윈도우를 종료하고 launch파일을 다시 시작해야 google 맵이 로드됩니다.</font>
+
+
+## 6단계 GPS 핑 찍어 보기
+
+1) 위도, 경도를 topic이 담긴 rosbag 파일 혹은 실시간으로 위도 경도 topic을 출력하는 환경을 구성하여 rostopic list에서 GPS 토픽이 출력되게 한다.
+   
+ (필자의 경우 rosbag play를 통해 gps/fix 토픽을 실시간으로 받아오는 중임)
+
+3) 'navsat' Add 하기
+
+>왼쪽 하단 "Add" 버튼 클릭후 navsat 클릭
+![gps](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/40b9ebb3-2a1a-4db4-beef-08bc4415e0ec)
+
+
+3) 'tile_map' Add 하기
+   
+>왼쪽 하단 "Add" 버튼 클릭후 tile_map 클릭
+![map](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/1c98f83c-294d-4b49-8137-5cd166a843d4)
+
+4) GPS 토픽 설정하기
+   
+> navsat 윈도우에서 'Topic:' 칸에 'select' 클릭 -> 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 -> OK버튼 클릭(필자의 경우 /gps/fix)
+ -> 'usb Latest Transforms:' 칸을 check해준다.
+만약 'usb Latest Transforms:' 칸이 보이지 않는다면  mapviz종료 -> 아래코드 실행 -> roslaunch 재실행 등 여러방법을 동원하면 갑자기 뜨는 경우 있음 (이유는 모르겠음)
+
+```bash
+sudo rm ~/.mapviz_config
+```
+![설정완료](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/9a7576fa-149e-4ceb-a6b7-5f935c799794)
+
 
 ## 추후에 실행할시
 
