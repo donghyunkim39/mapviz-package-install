@@ -246,7 +246,7 @@ http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
 
 > If, 실행이 안된다면
 > 
-> 가능성1) ' MAP 추가 -> GPS핑 추가' 순서가 아닌 'GPS핑 추가 -> MAP 추가' 했는지?
+> 가능성1) ' MAP 추가 -> GPS핑 추가' 순서인데 'GPS핑 추가 -> MAP 추가' 처럼 반대로 하진 않았는지?
 > 
 > 가능성2) mapviz 껏다 다시 launch하기 (설정 저장되어있음)
 > 
