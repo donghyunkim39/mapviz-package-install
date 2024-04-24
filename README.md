@@ -101,7 +101,7 @@ pip uninstall em
 ```bash
 pip install empy==3.3.4
 ```
-이후 3.catkin_make 진행 다시 진행
+이후 '3.catkin_make'단계 다시 진행
 
 5) 변경 사항 적용
 
