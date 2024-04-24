@@ -239,8 +239,6 @@ http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
 
 > 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 (필자의 경우 /gps/fix 임) <p>$\bf{ topic list가 비어있으면 rosbag 재실행 }$</p>
 
-> OK버튼 클릭
-
 
 ![설정완료](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/9a7576fa-149e-4ceb-a6b7-5f935c799794)
 
