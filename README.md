@@ -257,6 +257,8 @@ http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
 sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 ```
 
+>가능성5) mapviz launch 실행시 처음 default로 켜지는 위치가 현재 혹은 rosbag했을 당시 위치인지?
+
 ## 추후에 실행할시
 
 1)
