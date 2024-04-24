@@ -145,7 +145,7 @@ roslaunch mapviz mapviz.launch
 
 ## 5단계 실제 지도 불러오기
 
-<font color="red">이제부터는 순서가 중요합니다. '맵 불러오기 -> GPS 핑찍기' 순서 지키기 </font>
+<p>$\bf{bold\ text}$</p>이제부터는 순서가 중요합니다. '맵 불러오기 -> GPS 핑찍기' 순서 지키기
 > 반대로하면 GPS핑이 지도에 가려져 안보입니다.
 
 
