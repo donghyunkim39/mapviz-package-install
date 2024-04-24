@@ -91,11 +91,12 @@ catkin_make
    
 위 오류가 발생안하면  5. 으로 jump 한다.
 만약 발생한다면 em module 설치
+(애초에 모듈이 설치되어 있지않다면, 파일이 존재하지 않는다고 뜰수있다.)
 
 ```bash
 pip uninstall em
 ```
-애초에 안깔려있다면 파일이 존재하지 않는다고 뜰수있음
+
 
 ```bash
 pip install empy==3.3.4
