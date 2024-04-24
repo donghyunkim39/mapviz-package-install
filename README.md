@@ -90,7 +90,7 @@ catkin_make
 4) AttributeError: module 'em' has no attribute 'RAW_OPT' , Invoking "make -j8 -l8" failed  오류발생
    
 위 오류가 발생안하면  5. 으로 jump 한다.
-만약 발생한다면 em module 설치
+>만약 발생한다면 em module 설치
 >(애초에 모듈이 설치되어 있지않다면, 파일이 존재하지 않는다고 뜰수있다.)
 
 ```bash
@@ -128,10 +128,11 @@ source devel/setup.bash
 
 필독) 수정 내용:
  > 수정1) value="swri" 에서 value="auto" 로 수정 
- >: 실시간으로 GPS값을 읽어오기 위함
+>: 실시간으로 GPS값을 읽어오기 위함
  
  > 수정2) <remap from="fix" to="/gps/fix"/> 추가 하기 
- >: 필자의 경우 위도, 경도 정보가 /gps/fix 토픽에 담겨있으므로 /gps/fix라고 설정함. 개인환경에 맞춰 수정 필요. (본인 토픽이름에 맞게 수정 필요) 
+>: 필자의 경우 위도, 경도 정보가 /gps/fix 토픽에 담겨있으므로 /gps/fix라고 설정함. 개인환경에 맞춰 수정 필요.
+>(본인 토픽이름에 맞게 수정 필요) 
 
  3) 수정한 launch file을 Save 한다.
 
