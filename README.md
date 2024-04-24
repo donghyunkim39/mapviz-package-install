@@ -101,11 +101,10 @@ pip uninstall em
 ```bash
 pip install empy==3.3.4
 ```
-
-이후 test_ws내에서(src경로 밖) catkin_make 다시 진행하면 성공적으로 완료!
+이후 3.catkin_make 진행 다시 진행
 
 5) 변경 사항 적용
-   
+
 test_ws 경로에서(cd test_ws경로)
 ```bash
 source devel/setup.bash
