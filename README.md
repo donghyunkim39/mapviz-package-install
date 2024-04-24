@@ -127,7 +127,7 @@ source devel/setup.bash
 ![Screenshot from 2024-04-24 00-40-16](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/d791c786-538e-43f7-927f-48d4d7af9ec6)
 
 필독) 수정 내용:
- > 수정1) <param name="local_xy_origin" value="swri"/> 에서 <param name="local_xy_origin" value="auto"/> 
+ > 수정1) '<param name="local_xy_origin" value="swri"/> 에서 <param name="local_xy_origin" value="auto"/>' 
  : 실시간으로 GPS값을 읽어오기 위함
  
  > 수정2) <remap from="fix" to="/gps/fix"/> 추가 하기 
