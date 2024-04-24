@@ -221,26 +221,27 @@ http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
    
  (필자의 경우 rosbag play를 통해 gps/fix 토픽을 실시간으로 받아오는 중임)
 
-3) 'navsat' Add 하기
+2) navsat 추가
+![Screenshot from 2024-04-24 16-08-55](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/360c3315-44be-4def-8b83-a1084045bace)
 
->왼쪽 하단 "Add" 버튼 클릭후 navsat 클릭
-![gps](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/40b9ebb3-2a1a-4db4-beef-08bc4415e0ec)
+> 왼쪽 하단 'Add' 클릭
 
+> 'navsat' 클릭
 
-3) 'tile_map' Add 하기
+> 'OK' 클릭
+
    
->왼쪽 하단 "Add" 버튼 클릭후 tile_map 클릭
-![map](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/1c98f83c-294d-4b49-8137-5cd166a843d4)
-
-4) GPS 토픽 설정하기
+2) GPS 토픽 설정하기
    
-> navsat 윈도우에서 'Topic:' 칸에 'select' 클릭 -> 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 -> OK버튼 클릭(필자의 경우 /gps/fix)
- -> 'usb Latest Transforms:' 칸을 check해준다.
-만약 'usb Latest Transforms:' 칸이 보이지 않는다면  mapviz종료 -> 아래코드 실행 -> roslaunch 재실행 등 여러방법을 동원하면 갑자기 뜨는 경우 있음 (이유는 모르겠음)
+![Screenshot from 2024-04-24 16-09-24](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/9698f0dc-4257-4fa7-914e-939d11fcd9d8)
 
-```bash
-sudo rm ~/.mapviz_config
-```
+> navsat 윈도우 'Topic:' 칸 'select' 클릭
+
+> 목록에 뜨는 현재 출력되는 GPS 토픽값으로 설정 (필자의 경우 /gps/fix 임) <p>$\bf{ topic list가 비어있으면 rosbag 재실행 }$</p>
+
+> OK버튼 클릭
+
+
 ![설정완료](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/9a7576fa-149e-4ceb-a6b7-5f935c799794)
 
 
