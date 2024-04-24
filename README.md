@@ -189,7 +189,9 @@ sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 ![Screenshot from 2024-04-24 16-07-59](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/157cca8a-e1e2-4c7b-843d-7f3e1875b1d9)
 
 >mapviz 윈도우에서 'Add'클릭
+
 >'tile_map' 클릭
+
 >'OK' 클릭
 
 ![Screenshot from 2024-04-24 16-08-34](https://github.com/donghyunkim39/mapviz-package-install/assets/163104650/8583696d-e486-4a79-afa4-b22adfa6bb9b)
